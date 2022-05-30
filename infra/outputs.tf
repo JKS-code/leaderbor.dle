@@ -16,34 +16,34 @@ output "dmz_subnet_ids" {
 }
 
 # App subnets info
-output "app_subnet_cidrs" {
-  value = aws_subnet.app.*.cidr_block
-}
+# output "app_subnet_cidrs" {
+#   value = aws_subnet.app.*.cidr_block
+# }
 
-output "app_subnet_ids" {
-  value = aws_subnet.app.*.id
-}
+# output "app_subnet_ids" {
+#   value = aws_subnet.app.*.id
+# }
 
-# DB/private subnets info
-output "db_subnet_cidrs" {
-  value = aws_subnet.db.*.cidr_block
-}
+# # DB/private subnets info
+# output "db_subnet_cidrs" {
+#   value = aws_subnet.db.*.cidr_block
+# }
 
-output "db_subnet_ids" {
-  value = aws_subnet.db.*.id
-}
+# output "db_subnet_ids" {
+#   value = aws_subnet.db.*.id
+# }
 
-output "nat_gateway_public_ips" {
-  value = aws_nat_gateway.ngw.*.public_ip
-}
+# output "nat_gateway_public_ips" {
+#   value = aws_nat_gateway.ngw.*.public_ip
+# }
 
-output "dmz_route_table_id" {
-  value = aws_route_table.pub.id
-}
+# output "dmz_route_table_id" {
+#   value = aws_route_table.pub.id
+# }
 
-output "priv_route_table_ids" {
-  value = aws_route_table.priv.*.id
-}
+# output "priv_route_table_ids" {
+#   value = aws_route_table.priv.*.id
+# }
 
 data "aws_caller_identity" "current" {}
 

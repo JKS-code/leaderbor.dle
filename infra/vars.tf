@@ -1,6 +1,6 @@
 provider "aws" {
   region              = var.aws_region
-  allowed_account_ids = local.account_id[var.workspace]
+  allowed_account_ids = [local.account_id[var.workspace]]
 
   default_tags {
     tags = {
