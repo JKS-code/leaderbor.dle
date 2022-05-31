@@ -22,18 +22,16 @@ data "terraform_remote_state" "core" {
 # Locals that pertain to information known only after applies
 locals {
   subnet_ids = {
-    app = data.terraform_remote_state.core.outputs.app_subnet_ids
-    db  = data.terraform_remote_state.core.outputs.db_subnet_ids
+    # app = data.terraform_remote_state.core.outputs.app_subnet_ids
+    # db  = data.terraform_remote_state.core.outputs.db_subnet_ids
     dmz = data.terraform_remote_state.core.outputs.dmz_subnet_ids
   }
 
   subnet_cidrs = {
-    app = data.terraform_remote_state.core.outputs.app_subnet_cidrs
-    db  = data.terraform_remote_state.core.outputs.db_subnet_cidrs
+    # app = data.terraform_remote_state.core.outputs.app_subnet_cidrs
+    # db  = data.terraform_remote_state.core.outputs.db_subnet_cidrs
     dmz = data.terraform_remote_state.core.outputs.dmz_subnet_cidrs
   }
 
   vpc_id     = data.terraform_remote_state.core.outputs.vpc_id
-  account_id = data.terraform_remote_state.core.outputs.account_id
-
 }
