@@ -6,3 +6,4 @@ an app to aggregate daily nerd games
 * Post scores everyday
 * Track history and stats 
 * Leaderboard with your friends
+* Does taxes (for a price)
