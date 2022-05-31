@@ -9,10 +9,6 @@ const count = ref(0)
 function changeUserName(userNameInput : string) {
   userName.value = userNameInput;
 }
-function doDifferentThing(anotherInput: Number) {
-  console.log(anotherInput);
-  userName.value = "lalala";
-}
 </script>
 <template>
   <h1>{{ msg }}</h1>
@@ -32,11 +28,7 @@ function doDifferentThing(anotherInput: Number) {
   </p>
   <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" @click="count++">count is: {{ count }}</button>
   <div>{{userNameComputed}}</div>
-  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" @click="changeUserName('test')">Do something</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" @click="changeUserName('test')">Do something {{msg}}</button>
 </template>
 
 <style scoped>
