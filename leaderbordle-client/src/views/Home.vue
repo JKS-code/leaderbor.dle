@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { useAuth0 } from '@auth0/auth0-vue';
+const { user, isAuthenticated} = useAuth0();
+</script>
+
 <template>
  <h1>Home Page</h1>
  <pre v-if="isAuthenticated">
@@ -28,23 +33,3 @@ code {
   color: #304455;
 }
 </style>
-
-<script>
-import { ref, computed } from 'vue'
-import ReferenceComponent from '../components/ReferenceComponent.vue'
-import { useAuth0 } from '@auth0/auth0-vue';
-
-
-export default {
-
-  setup() {
-    const { user, isAuthenticated} = useAuth0();
-
-    return {
-      user,
-      isAuthenticated
-    };
-  }
-}
-
-</script>

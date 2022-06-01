@@ -20,8 +20,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/secret',
     name: 'secret',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Secret.vue')
-
+    component: () => import(/* webpackChunkName: "about" */ '../views/Secret.vue'),
+    beforeEnter: authGuard
   }
 ]
 
