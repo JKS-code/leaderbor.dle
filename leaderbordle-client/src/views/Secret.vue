@@ -1,7 +1,6 @@
 <template>
   <div>
-    <button @click="login">Log in</button>
-    <button @click="logout">Log out</button>
+    <img src="../assets/munchy-man.gif" alt="">
   </div>
 </template>
 
@@ -15,6 +14,13 @@
     background-color: gray;
     color: white;
   }
+
+  img {
+    height: 400px;
+    width: 400px;
+    margin: auto;
+  }
+
 </style>
 
 <script>
