@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { useAuth0 } from '@auth0/auth0-vue';
+import { useAuth0 } from "@auth0/auth0-vue";
 const { loginWithRedirect, logout } = useAuth0();
 </script>
 
 <template>
   <div>
-    <img src="../assets/munchy-man.gif" alt="">
+    <img src="../assets/munchy-man.gif" alt="" />
   </div>
 </template>
 

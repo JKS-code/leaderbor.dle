@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-defineProps<{ msg: string }>()
+import { ref, computed } from "vue";
+defineProps<{ msg: string }>();
 const userName = ref("Joey");
- const userNameComputed = computed(() => {
-      return (count.value.toString() + userName.value);
-    });
-const count = ref(0)
-function changeUserName(userNameInput : string) {
+const userNameComputed = computed(() => {
+  return count.value.toString() + userName.value;
+});
+const count = ref(0);
+function changeUserName(userNameInput: string) {
   userName.value = userNameInput;
 }
 </script>
@@ -26,9 +26,21 @@ function changeUserName(userNameInput : string) {
     |
     <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
   </p>
-  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" @click="count++">count is: {{ count }}</button>
-  <div>{{userNameComputed}}</div>
-  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="button" @click="changeUserName('test')">Do something {{msg}}</button>
+  <button
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    type="button"
+    @click="count++"
+  >
+    count is: {{ count }}
+  </button>
+  <div>{{ userNameComputed }}</div>
+  <button
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    type="button"
+    @click="changeUserName('test')"
+  >
+    Do something {{ msg }}
+  </button>
 </template>
 
 <style scoped>
