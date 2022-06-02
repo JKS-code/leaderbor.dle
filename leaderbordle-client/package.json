@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier .  --write"
   },
   "dependencies": {
     "@auth0/auth0-vue": "^1.0.1",
