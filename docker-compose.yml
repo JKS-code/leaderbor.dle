@@ -1,0 +1,21 @@
+# For local development only
+version: '3.7'
+services:
+  leaderbordle-db:
+    platform: linux/x86_64 # For this to work on M1 mac
+    image: mysql:5.7
+    container_name: leaderbordle-db
+    restart: always
+    ports:
+      # Maps local port to container port
+      - '3310:3306'
+    environment:
+      MYSQL_DATABASE: 'leaderbordle'
+      MYSQL_ROOT_PASSWORD: 'password'
+      # Maps our volume to a local directory on our machine
+    volumes:
+      # <Docker volume stored on local host> : <Container directory where data is stored>
+      - leaderbordle-db:/var/lib/mysql
+# Volumes allow data to be persisted between start/stops of the docker container by storing data on our machines
+volumes:
+  leaderbordle-db:
