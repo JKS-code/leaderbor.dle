@@ -1,9 +1,22 @@
 import { createStore } from "vuex";
 
+const state = {
+  wordleAnswerText: "",
+  heardleAnswerText: "",
+  worldleAnswerText: "",
+  framedAnswerText: ""
+}
+
+const mutations = {
+  updateWordleText(state: any, text: string) {
+    state.wordleAnswerText = text;
+  }
+}
+
 export default createStore({
-  state: {},
+  state: state,
   getters: {},
-  mutations: {},
+  mutations: mutations,
   actions: {},
   modules: {},
 });
