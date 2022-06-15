@@ -1,15 +1,13 @@
 import { createStore } from "vuex";
 
 const state = {
-  wordleAnswerText: "",
-  heardleAnswerText: "",
-  worldleAnswerText: "",
-  framedAnswerText: ""
+  wordleNumGuesses: null
 }
 
 const mutations = {
-  updateWordleText(state: any, text: string) {
-    state.wordleAnswerText = text;
+  updateWordleNumGuesses(state: any, numGuesses: number) {
+    console.log("updating?");
+    state.wordleNumGuesses = numGuesses;
   }
 }
 

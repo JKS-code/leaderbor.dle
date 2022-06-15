@@ -12,18 +12,13 @@ const store = useStore();
 
 const readyForSubmit = computed(() => {
   //todo: elaborate
-  console.log("hmm");
-  console.log(store.state.wordleAnswerText);
-  return store.state.wordleAnswerText.length > 0;
+  return store.state.wordleNumGuesses != null;
 });
 
-const submit = (value: string) => { 
-    console.log(value);
-    const wordleAnswerText = store.state.wordleAnswerText;
-    console.log(wordleAnswerText);
+const submit = () => { 
+  console.log(store.state.wordleNumGuesses);
 }
 
-const value: string = "test";
 
 </script>
 
@@ -32,9 +27,8 @@ const value: string = "test";
   <p>Maybe protected in the future</p>
   <WorldleForm />
   <WordleForm />
-  <HeardleForm />
   <FramedForm />
-  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4" :class="readyForSubmit && 'rounded bg-red-500'" :disabled="!readyForSubmit" @click="submit(value)">Copy & Submit Scores</button>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4" :class="readyForSubmit && 'rounded bg-red-500'" :disabled="!readyForSubmit" @click="submit()">Copy & Submit Scores</button>
 </template>
 <style scoped>
 h1 {

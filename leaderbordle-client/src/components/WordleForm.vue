@@ -6,8 +6,16 @@ const store = useStore();
 
 const wordleAnswerText = computed({
   get: () => store.state.wordleAnswerText,
-  set: (text) => store.commit('updateWordleText', text)
-})
+  set: (wordleRawText) => store.commit('updateWordleNumGuesses', getWordleNumGuesses(wordleRawText))
+});
+
+const getWordleNumGuesses = (wordleText: string) => {
+   console.log("wordleText", wordleText);
+   const wordleNumGuessesRaw = wordleText.split('/')[0].slice(-1);
+   console.log(wordleNumGuessesRaw);
+   console.log(wordleNumGuessesRaw != 'X' ? parseInt(wordleNumGuessesRaw) : 10000);
+   return wordleNumGuessesRaw != 'X' ? parseInt(wordleNumGuessesRaw) : 10000;
+}
 
 </script>
 <template>
