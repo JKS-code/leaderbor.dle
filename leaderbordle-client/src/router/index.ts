@@ -15,15 +15,20 @@ const routes: Array<RouteRecordRaw> = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Login.vue"),
+      import(/* webpackChunkName: "login" */ "../views/Login.vue"),
   },
   {
     path: "/secret",
     name: "secret",
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Secret.vue"),
+      import(/* webpackChunkName: "secret" */ "../views/Secret.vue"),
     beforeEnter: authGuard,
   },
+  {
+    path: "/play",
+    name: "play",
+    component: () => import(/* webpackChunkName: "play" */ "../views/Play.vue")
+  }
 ];
 
 const router = createRouter({
